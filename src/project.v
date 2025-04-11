@@ -19,11 +19,13 @@ module tt_um_draft (
   // All output pins must be assigned. If not used, assign to 0.
 //  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
 
-  Alu #(G_N_BIT = 7) m_alu (
+  Alu #(
+    .G_N_BIT(7)
+  ) m_alu (
     .i_s1(ui_in),
     .i_s2(uio_in),
     .o_res(uo_out)
-  )
+  );
 
   assign uio_out = 0;
   assign uio_oe  = 0;
